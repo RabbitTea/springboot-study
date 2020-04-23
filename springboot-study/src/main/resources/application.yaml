@@ -1,0 +1,57 @@
+# person对象
+person:
+  name: sandra${random.uuid}
+  age: 7
+  happy: true
+  birth: 2013/8/8
+  maps: {k1: v1, k2: v2}
+  #hello: hi
+  lists:
+    - code
+    - movie
+    - game
+  dog:
+    # 如果在yaml文件中前面的值没有，就走后面的"hello"这个默认值，后面接上"_福福"，有的话就是前面的person.hello的值，后面拼接"_福福"
+    name: ${person.hello:hello}_福福
+    age: 3
+
+
+# dog对象
+dog:
+   first-name: 大黄
+   age: 3
+
+
+server:
+  port: 8081
+spring:
+  profiles:
+  # 指定选择哪一个环境配置
+  active: dev
+
+
+
+# 多环境配置用---分隔
+---
+server:
+  port: 8082
+# 起配置的名字
+spring:
+  profiles: dev
+
+
+---
+server:
+  port: 8083
+spring:
+  profiles: test
+
+
+
+# 配置文件到底能写什么？  和spring.factories的联系:和其中的@Configuration注解的配置类对应，在其中找到具体使用的类
+# 该类使用为@ConfigurationProperties的prefix属性的前缀拼接其中的属性    (idea应该有提示的呀？)
+
+
+
+# 开启springboot调试类
+debug: true

@@ -1,0 +1,32 @@
+# Springboot 核心配置文件
+
+# 更改项目端口号
+# server.poot=8081  这是application.properties语法格式
+
+#.yaml语法 ：和value间必须有一个空格
+server:
+  port: 8081
+
+# 普通的key-value
+name: sandra
+
+
+# 对象  properties不可以
+student:
+  name: sandra
+  age: 3
+
+
+# 对象的行内写法
+student: {name: sandra, age: 3}
+
+
+# 数组
+pets:
+  - cat
+  - dog
+  - pig
+
+
+# 数组的行内写法
+pets: [cat, dog, pig]

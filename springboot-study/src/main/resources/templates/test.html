@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--thymeleaf语法-->
+    <!--所有的html元素都可以被thymeleaf接管：th:元素名；才可以在双引号中写thymeleaf的表达式-->
+    <!--$符号取变量-->
+    <div th:text="${msg}"></div>
+
+    <!--utext表示转义其中的内容，用于识别其中的html标签等-->
+    <div th:utext="${msg}"></div>
+
+<hr>
+
+    <!--遍历列表-->
+    <!--<h3 th:each="user:${users}}" th:text="${user}"></h3>-->
+    <!--第二种写法：行内-->
+    <h3 th:each="user:${users}}">
+        [[ ${user} ]]
+    </h3>
+
+</body>
+</html>
